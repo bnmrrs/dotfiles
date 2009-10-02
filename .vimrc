@@ -27,7 +27,6 @@ set history=500 " keep track of last commands
 set number ruler " show line numbers
 set incsearch " incremental searching on
 set hlsearch " highlight all matches
-set smartcase
 set showtabline=2 " show always for console version
 set wildmenu " menu on statusbar for command autocomplete
 " default to UTF-8 encoding
@@ -77,14 +76,32 @@ set showcmd
 set viminfo='20,\"50,:20,%,n~/.viminfo
 set wildmode=list:longest,full
 
-map ,q :q!<CR>
-map ,s :w<CR>
-map ,w :x<CR>
-map ,b :buffers<CR>
+let mapleader = ","    " 
+let g:mapleader = ","
+
+map <Leader>q :q!<CR>
+map <Leader>s :w<CR>
+map <Leader>w :x<CR>
+map <Leader>b :buffers<CR>
+
 nmap <silent> <F6> :set number!<CR>
 nmap <Space> <PageDown>
 set sts=2
 set autoindent
+
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" store all of your vim swp files in one place, make sure this directory exists set backupdir=/Users/{YOUR_USERNAME}/vim_swp
+set directory=/home/bmorris/vim_swp
+
+:nmap H ^
+:nmap L $
+
+set ignorecase
+
 nmap <silent> <F4>
         \ :!ctags -f ./tags
         \ --langmap="php:+.inc"
