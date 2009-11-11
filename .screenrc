@@ -1,0 +1,47 @@
+# Default process started in screen's windows
+shell bash
+
+# Don't display the copyright message
+startup_message off
+
+# Set the default number of lines to keey in the history
+defscrollback 1000
+
+# Set the status line
+################## hostname | windowlist | <padded right> 04:20pm 2006.04.27 date
+caption always "%0=%{+b rk}%H %{bk}| %0L=%{mk}%>%-Lw%{= BW}%n%f* %t%{-}%+Lw%L>%?(%u)%? %{bk}|%>%=%{Yk} %=%C%a %Y.%m.%d %{bk}%100="
+
+# The command character
+escape ``
+
+# No audible bell
+vbell on
+
+# Special xterm hardstatus: use the window title
+termcapinfo xterm* 'hs:ts=\\E]2;:fs=\\007:ds=\\E]2;screen\\007'
+
+# 040126 To be able to select windows with n > 9 ->
+# press "C-a - #" instead of just "C-a #"
+bind - command -c select_1n
+bind -c select_1n 0 select 10
+bind -c select_1n 1 select 11
+bind -c select_1n 2 select 12
+bind -c select_1n 3 select 13
+bind -c select_1n 4 select 14
+bind -c select_1n 5 select 15
+bind -c select_1n 6 select 16
+bind -c select_1n 7 select 17
+bind -c select_1n 8 select 18
+bind -c select_1n 9 select 19
+bind -c select_1n - command -c select_2n
+bind -c select_2n 0 select 20
+bind -c select_2n 1 select 21
+bind -c select_2n 2 select 22
+bind -c select_2n 3 select 23
+bind -c select_2n 4 select 24
+bind -c select_2n 5 select 25
+bind -c select_2n 6 select 26
+bind -c select_2n 7 select 27
+bind -c select_2n 8 select 28
+bind -c select_2n 9 select 29
+bind -c select_2n - select -
