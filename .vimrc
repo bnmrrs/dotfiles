@@ -95,7 +95,7 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " store all of your vim swp files in one place, make sure this directory exists set backupdir=/Users/{YOUR_USERNAME}/vim_swp
-set directory=/home/bmorris/vim_swp
+set directory=~/.vim_swp
 
 :nmap H ^
 :nmap L $
