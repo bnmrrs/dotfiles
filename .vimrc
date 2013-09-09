@@ -1,5 +1,7 @@
 set runtimepath=~/.vim,$VIMRUNTIME,~/.vim/after
 
+call pathogen#infect()
+
 "
 " appearance options
 "
@@ -85,7 +87,7 @@ map <Leader>w :x<CR>
 map <Leader>b :buffers<CR>
 
 nmap <silent> <F6> :set number!<CR>
-nmap <Space> <PageDown>
+nmap <space> <PageDown>
 set sts=2
 set autoindent
 
@@ -102,10 +104,12 @@ set directory=~/.vim_swp
 
 set ignorecase
 
+" Remove trailing white space
+map <C-n> :%s/\s\+$//e<CR>
+
 nmap <silent> <F4>
         \ :!ctags -f ./tags
         \ --langmap="php:+.inc"
         \ -h ".php.inc" -R --totals=yes
         \ --tag-relative=yes --PHP-kinds=+cf-v .<CR>
 set tags=./tags,tags
-
