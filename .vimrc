@@ -1,6 +1,9 @@
 set runtimepath=~/.vim,$VIMRUNTIME,~/.vim/after
 
-call pathogen#infect()
+execute pathogen#infect()
+
+filetype plugin indent on
+syntax on
 
 "
 " appearance options
@@ -44,7 +47,6 @@ let g:Tlist_Inc_Winwidth = 0
 let g:python_highlight_numbers = 1
 
 
-syntax on " syntax hilight on
 syntax sync fromstart 
 filetype plugin indent on
 
